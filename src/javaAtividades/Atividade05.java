@@ -6,10 +6,10 @@ public class Atividade05 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String animal;
+		String animal = "";
 
 		System.out.println(
-				"Pense em um desses animais: macaco; leão; peixe-morcego; peixe beta; bode; humano, tubarão; pirarucu; kiwi; pato; pinguimn; cobra-coral;jacaré;tartaruga-de-couro");
+				"Pense em um desses animais: canguru; leão; peixe-morcego; peixe beta; bode; humano, tubarão; pirarucu; kiwi; pato; pinguimn; cobra-coral;jacaré;tartaruga-de-couro");
 		System.out.println("Você pensou em um mamífero? (Responda apenas com s e n para sim e não.(s/n)");
 
 		String resposta = sc.nextLine().toLowerCase();
@@ -21,9 +21,9 @@ public class Atividade05 {
 				System.out.println("Você pensou é onívoro?");
 				resposta = sc.nextLine().toLowerCase();
 				if (resposta.equalsIgnoreCase("s")) {
-					System.out.println("O animal que você pensou é um humano");
+					animal = "humano";
 				} else {
-					System.out.println("O animal que você pensou foi uma macaco.");
+					animal = "canguru";
 				}
 			} else {
 				System.out.println("O animal que você pensou é quadrúpede?");
@@ -32,9 +32,9 @@ public class Atividade05 {
 					System.out.println("Você pensou tem ele é carnívoro?");
 					resposta = sc.nextLine().toLowerCase();
 					if (resposta.equalsIgnoreCase("s")) {
-						System.out.println("O animal que você pensou no leão");
+						animal = "leão";
 					} else {
-						System.out.println("O animal que você pensou bode");
+						animal = "bode";
 					}
 				}
 			}
@@ -48,29 +48,29 @@ public class Atividade05 {
 					System.out.println("O animal que você pensou é um animal carnívoro?");
 					resposta = sc.nextLine().toLowerCase();
 					if (resposta.equalsIgnoreCase("s")) {
-						System.out.println("Você pensou no tubarão");
+						animal = "tubarão";
 					} else {
-						System.out.println("Você pensou no peixe-morcego");
+						animal = "peixe-morcego";
 					}
 				} else {
-					System.out.println("Você pensou no pirarucu");
+					animal = "pirarucu";
 				}
 			} else {
 				System.out.println("O animal que você pensou é uma ave?");
 				resposta = sc.nextLine().toLowerCase();
 				if (resposta.equalsIgnoreCase("s")) {
-					System.out.println("O animal que você pensou Onívoro?");
+					System.out.println("O animal que você pensou não é Onívoro?");
 					resposta = sc.nextLine().toLowerCase();
 					if (resposta.equalsIgnoreCase("s")) {
 						System.out.println("O animal que você pensou tem nome de fruta?");
 						resposta = sc.nextLine().toLowerCase();
 						if (resposta.equalsIgnoreCase("s")) {
-							System.out.println("O animal que você pensou é a Kiwi");
+							animal = "kiwi";
 						} else {
-							System.out.println("O animal que você pensou é o pinguim");
+							animal = "pinguim";
 						}
 					} else {
-						System.out.println("O animal que você pensou é um pato");
+						animal = "pato";
 					}
 				} else {
 					System.out.println("O animal é um réptil?");
@@ -82,20 +82,21 @@ public class Atividade05 {
 							System.out.println("O animal que você pensou é venenoso?");
 							resposta = sc.nextLine().toLowerCase();
 							if (resposta.equalsIgnoreCase("s")) {
-								System.out.println("O animal que você pensou é a cobra-coral.");
+								animal = "cobra-coral";
 							} else {
-								System.out.println("O animal que você pensou é o jacaré.");
+								animal = "jacaré";
 							}
 
-						}else {
-							System.out.println("O animal que você pensou é a tartaruca-de-couro.");
+						} else {
+							animal = "tartaruca-de-couro.";
 						}
-					}else {
+					} else {
 						System.out.println("Animal não identificado");
 						return;
 					}
 				}
 			}
 		}
+		System.out.println("O animal que você pensou foi no: " + animal + ".");
 	}
 }

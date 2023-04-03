@@ -2,12 +2,12 @@ package javaAtividades;
 
 import java.util.Scanner;
 import java.security.SecureRandom;
-import java.util.Random;
 
 public class GeradorDeSenhasAleatorio {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		String caracteres = "";
 
 		System.out.println("informe o Tamanho da sua senha: ");
 		int tamanho = sc.nextInt();
@@ -16,8 +16,40 @@ public class GeradorDeSenhasAleatorio {
 
 		System.out.println("Informe quais caracteres você deseja usar para a sua senha: ");
 		System.out.println(
-				"Exemplos.: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢");
-		String caracteres = sc.nextLine();
+				"Exemplos.: Escolha um dos exemplos a seguir ou escolha os seus próprios caracteres (apenas informa o valor do exemplo): ");
+		System.out.println("Ex.: (1): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ");
+		System.out.println("Ex.: (2): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ");
+		System.out.println("Ex.: (3): 1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢ ");
+		System.out.println("Ex.: (4): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢ ");
+		System.out.println("Ex.: (5): Selecione o número 5 para fazer o seu próprio modelo. ");
+		System.out.println("Você também pode fazer o seu modelo de senha própio.");
+		char exemplos = sc.next().charAt(0);
+		
+		sc.nextLine();
+
+		switch (exemplos) {
+		case '1':
+			caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			break;
+		case '2':
+			caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+			break;
+		case '3':
+			caracteres = "1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢";
+			break;
+		case '4':
+			caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢";
+			break;
+		case '5':
+			System.out.println("Informe o seu modelo de senha: ");
+			caracteres = sc.nextLine();
+			break;
+		default:
+			System.out.println("Valor não identificado, tentar novamente.");
+			return;
+		}
+		
+		
 
 		String senha = geradorSenha(tamanho, caracteres);
 		System.out.println("A senha gerada foi: " + senha);

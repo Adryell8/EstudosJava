@@ -1,6 +1,7 @@
 package javaAtividades;
 
 import java.util.Scanner;
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class GeradorDeSenhasAleatorio {
@@ -17,9 +18,9 @@ public class GeradorDeSenhasAleatorio {
 
 	private static String geradorSenha(int tamanho) {
 
-		String caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879";
+		String caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢";
 
-		Random rand = new Random();
+		SecureRandom rand = new SecureRandom();
 
 		StringBuilder senha = new StringBuilder();
 
@@ -30,5 +31,4 @@ public class GeradorDeSenhasAleatorio {
 
 		return senha.toString();
 	}
-
 }

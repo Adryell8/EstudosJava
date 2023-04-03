@@ -8,18 +8,22 @@ public class GeradorDeSenhasAleatorio {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int tamanho = 0;
 
 		System.out.println("informe o Tamanho da sua senha: ");
-		tamanho = sc.nextInt();
-		String senha = geradorSenha(tamanho);
+		int tamanho = sc.nextInt();
+
+		sc.nextLine();
+
+		System.out.println("Informe quais caracteres você deseja usar para a sua senha: ");
+		System.out.println(
+				"Exemplos.: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢");
+		String caracteres = sc.nextLine();
+
+		String senha = geradorSenha(tamanho, caracteres);
 		System.out.println("A senha gerada foi: " + senha);
 	}
 
-	private static String geradorSenha(int tamanho) {
-
-		String caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢";
-
+	private static String geradorSenha(int tamanho, String caracteres) {
 		SecureRandom rand = new SecureRandom();
 
 		StringBuilder senha = new StringBuilder();

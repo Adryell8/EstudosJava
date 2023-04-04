@@ -22,20 +22,36 @@ public class AtividadeLancadorDeDado {
 
 				for (int i = 0; i < quantRolagem; i++) {
 					int D6 = ran.nextInt(6) + 1;
-					System.out.println("O resultado da rolagem do dado " + (i + 1) + "°" + " é:" + D6);
+					System.out.println("O resultado da rolagem do dado " + (i + 1) + "°" + " é: " + D6);
 				}
 			} else if (DadoString.equalsIgnoreCase("8")) {
-				int D8 = ran.nextInt(8) + 1;
-				System.out.println("O resultado da rolagem do dado D8 é: " + D8);
-			} else if (Dado == 10) {
-				int D10 = ran.nextInt(10) + 1;
-				System.out.println("O resultado da rolagem do dado D10 é: " + D10);
-			} else if (Dado == 12) {
-				int D12 = ran.nextInt(12) + 1;
-				System.out.println("O resultado da rolagem do dado D12 é: " + D12);
-			} else if (Dado == 20) {
-				int D20 = ran.nextInt(20) + 1;
-				System.out.println("O resultado da rolagem do dado D20 é: " + D20);
+				System.out.println("Informe quantos dados deseja que sejam rolados: ");
+				quantRolagem = sc.nextInt();
+				for (int i = 0; i < quantRolagem; i++) {
+					int D8 = ran.nextInt(8) + 1;
+					System.out.println("O resultado da rolagem do dado " + (i + 1) + "°" + " é: " + D8);
+				}
+			} else if (DadoString.equalsIgnoreCase("10")) {
+				System.out.println("Informe quantos dados deseja que sejam rolados: ");
+				quantRolagem = sc.nextInt();
+				for (int i = 0; i < quantRolagem; i++) {
+					int D10 = ran.nextInt(10) + 1;
+					System.out.println("O resultado da rolagem do dado " + (i + 1) + "°" + " é: " + D10);
+				}
+			} else if (DadoString.equalsIgnoreCase("12")) {
+				System.out.println("Informe quantos dados deseja que sejam rolados: ");
+				quantRolagem = sc.nextInt();
+				for (int i = 0; i < quantRolagem; i++) {
+					int D12 = ran.nextInt(12) + 1;
+					System.out.println("O resultado da rolagem do dado " + (i + 1) + "°" + " é: " + D12);
+				}
+			} else if (DadoString.equalsIgnoreCase("20")) {
+				System.out.println("Informe quantos dados deseja que sejam rolados: ");
+				quantRolagem = sc.nextInt();
+				for (int i = 0; i < quantRolagem; i++) {
+					int D20 = ran.nextInt(12) + 1;
+					System.out.println("O resultado da rolagem do dado " + (i + 1) + "°" + " é: " + D20);
+				}
 			}
 
 			System.out.println("Deseja continuar?");

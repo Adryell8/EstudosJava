@@ -16,14 +16,9 @@ public class GeradorDeSenhasAleatorio {
 		sc.nextLine();
 
 		System.out.println("Informe quais caracteres você deseja usar para a sua senha: ");
-		System.out.println(
-				"Exemplos.: Escolha um dos exemplos a seguir ou escolha os seus próprios caracteres (apenas informa o valor do exemplo): ");
-		System.out.println("Ex.: (1): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ");
-		System.out.println("Ex.: (2): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ");
-		System.out.println("Ex.: (3): 1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢ ");
-		System.out.println(
-				"Ex.: (4): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢ ");
-		System.out.println("Ex.: (5): Selecione o número 5 para fazer o seu próprio modelo. ");
+		System.out.println("Exemplos.: Escolha um dos exemplos a seguir ou escolha os seus próprios caracteres (apenas informa o valor do exemplo): ");
+			System.out.println("Ex.: (1): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢ ");
+		System.out.println("Ex.: (2): Selecione o número 5 para fazer o seu próprio modelo. ");
 		System.out.println("Você também pode fazer o seu modelo de senha própio.");
 		char exemplos = sc.next().charAt(0);
 
@@ -31,18 +26,9 @@ public class GeradorDeSenhasAleatorio {
 
 		switch (exemplos) {
 		case '1':
-			caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-			break;
-		case '2':
-			caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-			break;
-		case '3':
-			caracteres = "1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢";
-			break;
-		case '4':
 			caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢";
 			break;
-		case '5':
+		case '2':
 			System.out.println("Informe o seu modelo de senha: ");
 			caracteres = sc.nextLine();
 			break;
@@ -64,7 +50,7 @@ public class GeradorDeSenhasAleatorio {
 				System.out.println("Informe quais caracteres deseja, dessa vez escreva quais você deseja.");
 				caracteres = sc.nextLine();
 			} else {
-				System.out.println("A senha gerada foi:" + senha);
+				System.out.println("A senha gerada foi: " + senha);
 			}
 		}
 

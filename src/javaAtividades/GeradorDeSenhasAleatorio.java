@@ -8,6 +8,7 @@ public class GeradorDeSenhasAleatorio {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String caracteres = "";
+		String senha = "";
 
 		System.out.println("informe o Tamanho da sua senha: ");
 		int tamanho = sc.nextInt();
@@ -20,11 +21,12 @@ public class GeradorDeSenhasAleatorio {
 		System.out.println("Ex.: (1): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ");
 		System.out.println("Ex.: (2): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ");
 		System.out.println("Ex.: (3): 1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢ ");
-		System.out.println("Ex.: (4): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢ ");
+		System.out.println(
+				"Ex.: (4): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢ ");
 		System.out.println("Ex.: (5): Selecione o número 5 para fazer o seu próprio modelo. ");
-		System.out.println("Você pode fazer o seu modelo de senha própio.");
+		System.out.println("Você também pode fazer o seu modelo de senha própio.");
 		char exemplos = sc.next().charAt(0);
-		
+
 		sc.nextLine();
 
 		switch (exemplos) {
@@ -48,11 +50,24 @@ public class GeradorDeSenhasAleatorio {
 			System.out.println("Valor não identificado, tentar novamente.");
 			return;
 		}
-		
-		
 
-		String senha = geradorSenha(tamanho, caracteres);
-		System.out.println("A senha gerada foi: " + senha);
+		while (!VerficaSenha(senha)) {
+
+			senha = geradorSenha(tamanho, caracteres);
+
+			if (!VerficaSenha(senha)) {
+
+				System.out.println("A senha não é forte o sufiente.");
+				System.out.println("Informe um novo tamanho: ");
+				tamanho = sc.nextInt();
+				sc.nextLine();
+				System.out.println("Informe quais caracteres deseja, dessa vez escreva quais você deseja.");
+				caracteres = sc.nextLine();
+			} else {
+				System.out.println("A senha gerada foi:" + senha);
+			}
+		}
+
 	}
 
 	private static String geradorSenha(int tamanho, String caracteres) {
@@ -66,5 +81,31 @@ public class GeradorDeSenhasAleatorio {
 		}
 
 		return senha.toString();
+	}
+
+	public static boolean VerficaSenha(String senha) {
+		boolean isTemMaiuscula = false;
+		boolean isTemMinuscula = false;
+		boolean isTemNumero = false;
+		boolean isTemEspecial = false;
+
+		if (senha.length() < 8) {
+			return false;
+		}
+
+		for (char c : senha.toCharArray()) {
+			if (Character.isDigit(c)) {
+				isTemNumero = true;
+			} else if (Character.isLowerCase(c)) {
+				isTemMinuscula = true;
+			} else if (Character.isUpperCase(c)) {
+				isTemMaiuscula = true;
+			} else if (!Character.isLetterOrDigit(c)) {
+				isTemEspecial = true;
+			}
+
+		}
+
+		return isTemMaiuscula && isTemMinuscula && isTemNumero && isTemEspecial;
 	}
 }

@@ -22,7 +22,7 @@ public class GeradorDeSenhasAleatorio {
 		System.out.println("Ex.: (3): 1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢ ");
 		System.out.println("Ex.: (4): abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+123456879=/*-+.,°|<>~´`ºª{}[]§¨¬¹²³£¢ ");
 		System.out.println("Ex.: (5): Selecione o número 5 para fazer o seu próprio modelo. ");
-		System.out.println("Você também pode fazer o seu modelo de senha própio.");
+		System.out.println("Você pode fazer o seu modelo de senha própio.");
 		char exemplos = sc.next().charAt(0);
 		
 		sc.nextLine();

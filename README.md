@@ -1,7 +1,7 @@
 <h1 align="center">Título do seu repositório</h1>
 
 <!-- Descrição do seu repositório -->
-<p align="center">Descrição do seu repositório.</p>
+<p align="center">Este repositório contém alguns projetos desenvolvidos por mim como parte do meu aprendizado em Java.</p>
 
 <!-- Shields -->
 <p align="center">

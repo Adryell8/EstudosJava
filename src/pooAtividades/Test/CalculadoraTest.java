@@ -50,7 +50,7 @@ public class CalculadoraTest {
 			System.out.println("O resultado da multiplicação foi: " + resultado);
 			break;
 		case 4:
-			System.out.println("Informe o primeiro valor para ser dividido: ");
+			System.out.println("Informe o valor para ser dividido: ");
 			num1 = sc.nextDouble();
 			System.out.println("Informe o valor que irá dividir: ");
 			num2 = sc.nextDouble();

@@ -49,7 +49,7 @@ public class AtividadeLancadorDeDado {
 				System.out.println("Informe quantos dados deseja que sejam rolados: ");
 				quantRolagem = sc.nextInt();
 				for (int i = 0; i < quantRolagem; i++) {
-					int D20 = ran.nextInt(12) + 1;
+					int D20 = ran.nextInt(20) + 1;
 					System.out.println("O resultado da rolagem do dado " + (i + 1) + "°" + " é: " + D20);
 				}
 			}

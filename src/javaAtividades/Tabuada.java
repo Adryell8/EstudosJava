@@ -3,96 +3,23 @@ package javaAtividades;
 import java.util.Scanner;
 
 public class Tabuada {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Informe o valor que deseja saber a tabuada: ");
-		int num1 = sc.nextInt();
-		int valor = 1;
 
-		switch (num1) {
-		case 1:
+		System.out.println("Informe qual tabuada você deseja ver (informe apenas o número):");
+		int tabNum = sc.nextInt();
 
-			while (valor <= 10) {
-				int soma = num1 * valor;
-				System.out.println(num1 + " * " + valor + ": " + soma);
-				valor++;
-			}
-			break;
-		case 2:
+		sc.nextLine();
 
-			while (valor <= 10) {
-				int soma = num1 * valor;
-				System.out.println(num1 + " * " + valor + ": " + soma);
-				valor++;
-			}
-			break;
-		case 3:
+		System.out.println("Informe até quanto você deseja que a tabuada vá: ");
+		int tabNumMax = sc.nextInt();
 
-			while (valor <= 10) {
-				int soma = num1 * valor;
-				System.out.println(num1 + " * " + valor + ": " + soma);
-				valor++;
-			}
-			break;
-		case 4:
-
-			while (valor <= 10) {
-				int soma = num1 * valor;
-				System.out.println(num1 + " * " + valor + ": " + soma);
-				valor++;
-			}
-			break;
-		case 5:
-
-			while (valor <= 10) {
-				int soma = num1 * valor;
-				System.out.println(num1 + " * " + valor + ": " + soma);
-				valor++;
-			}
-			break;
-		case 6:
-
-			while (valor <= 10) {
-				int soma = num1 * valor;
-				System.out.println(num1 + " * " + valor + ": " + soma);
-				valor++;
-			}
-			break;
-		case 7:
-
-			while (valor <= 10) {
-				int soma = num1 * valor;
-				System.out.println(num1 + " * " + valor + ": " + soma);
-				valor++;
-			}
-			break;
-		case 8:
-
-			while (valor <= 10) {
-				int soma = num1 * valor;
-				System.out.println(num1 + " * " + valor + ": " + soma);
-				valor++;
-			}
-			break;
-		case 9:
-
-			while (valor <= 10) {
-				int soma = num1 * valor;
-				System.out.println(num1 + " * " + valor + ": " + soma);
-				valor++;
-			}
-			break;
-		case 10:
-
-			while (valor <= 10) {
-				int soma = num1 * valor;
-				System.out.println(num1 + " * " + valor + ": " + soma);
-				valor++;
-			}
-			break;
-		default:
-			System.out.println("Tabuada não listada.");
+		for (int i = 1; i <= tabNumMax; i++) {
+			int resultado = tabNum * i;
+			System.out.println(tabNum + " * " + i + " : " + resultado);
 		}
 
 	}
+
 }

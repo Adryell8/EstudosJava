@@ -1,25 +1,44 @@
 package pooAtividades.Domain;
 
+import java.util.List;
+
 public class Calculadora {
-	
+
 	public Calculadora() {
-		
-	}// Um construtor é criado automaticamente pelo Java, caso não seja definido um ele irá criar um na compilação o construtor é inicializado primeiro que os metodos
-	
-	public double soma(double num1, double num2) {
-		return num1 + num2;
+
 	}
 
-	public double subtrai(double num1, double num2) {
-		return num1 - num2;
+	public double soma(List<Double> numeros) {
+		double resultado = 0;
+		for (double num : numeros) {
+			resultado += num;
+		}
+		return resultado;
 	}
 
-	public double multiplica(double num1, double num2) {
-		return num1 * num2;
+	public double subtrai(List<Double> numeros) {
+		double resultado = numeros.get(0);
+		for (int i = 1; i < numeros.size(); i++) {
+			resultado -= numeros.get(i);
+		}
+		return resultado;
 	}
 
-	public double divide(double num1, double num2) {
-		return num1 / num2;
+	public double multiplica(List<Double> numeros) {
+		double resultado = 1;
+		for (double num : numeros) {
+			resultado *= num;
+		}
+		return resultado;
+
+	}
+
+	public double divide(List<Double> numeros) {
+		double resultado = numeros.get(0);
+		for (int i = 1; i < numeros.size(); i++) {
+			resultado /= numeros.get(i);
+		}
+		return resultado;
 	}
 
 }

@@ -4,10 +4,11 @@ public class Anime {
 
 	private String nome;
 	// private String studio;
-	private int[] eps;
+	private static int[] eps;
 	// private String genero;
 
-	{
+	static {
+		System.out.println("Bloco de inicialização");
 		eps = new int[100];
 		for (int i = 0; i < eps.length; i++) {
 			eps[i] = i + 1;

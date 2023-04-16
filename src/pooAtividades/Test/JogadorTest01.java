@@ -2,7 +2,7 @@ package pooAtividades.Test;
 
 import pooAtividades.Domain.Jogador;
 
-public class JogadorTest {
+public class JogadorTest01 {
 
 	public static void main(String[] args) {
 		Jogador jogador1 = new Jogador("Pelé");

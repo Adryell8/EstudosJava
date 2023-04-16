@@ -1,7 +1,7 @@
 <h1 align="center">Título do seu repositório</h1>
 
 <!-- Descrição do seu repositório -->
-<p align="center">Este repositório contém alguns projetos desenvolvidos por mim como parte do meu aprendizado em Java.</p>
+<p align="center">Este repositório contém alguns projetos desenvolvidos por mim como parte do meu aprendizado em Java. As atividades e os "Projetos" estão todos dentro de um grande Projeto Java, dentre eles estão arquivos que são apenas associados a entimento de um conceito em java, até projetos usando esses conceitos.</p>
 
 <!-- Shields -->
 <p align="center">

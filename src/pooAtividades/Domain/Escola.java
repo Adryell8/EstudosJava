@@ -29,11 +29,11 @@ public class Escola {
 	}
 
 	public void imprime() {
-		System.out.println(this.nome);
+		System.out.println("A escola é: "+this.nome);
 		if (professores == null)
 			return;
 		for (Professor professor : professores) {
-			System.out.println(professor.getNome());
+			System.out.println("Professor:"+ professor.getNome());
 		}
 	}
 }

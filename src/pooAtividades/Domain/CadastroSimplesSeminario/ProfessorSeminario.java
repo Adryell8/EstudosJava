@@ -5,6 +5,10 @@ public class ProfessorSeminario {
 	private String especializacao;
 	private Seminario[] seminarios;
 
+	public ProfessorSeminario() {
+		
+	}
+	
 	public ProfessorSeminario(String nome, String especializacao) {
 		this.nome = nome;
 		this.especializacao = especializacao;
@@ -23,7 +27,7 @@ public class ProfessorSeminario {
 		if(this.seminarios == null) return;
 		System.out.println("--- Detalhes seminarios ---");
 		for(Seminario seminario: this.seminarios) {
-			System.out.println("Titulo do seminario"+seminario.getTitulo());
+			System.out.println("Titulo do seminario: "+seminario.getTitulo());
 			System.out.println("Local do seminario: "+seminario.getLocal().getEndereco());
 			if(seminario.getAluno() == null) continue;
 			System.out.println("--- Alunos ---");

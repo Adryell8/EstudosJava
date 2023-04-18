@@ -11,6 +11,8 @@ public class CadastroSeminario {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		ProfessorSeminario professorSemiInit = new ProfessorSeminario();
+		
 		String Endereco, NomeAluno, NomeProfessor, Especializacao, SeminarioTitulo;
 		int IdadeAluno;
 		boolean cont = true;
@@ -39,11 +41,9 @@ public class CadastroSeminario {
 		Seminario seminario = new Seminario(SeminarioTitulo, local, alunos);
 		Seminario[] seminarios = { seminario };
 
-		professorSemi.setseminarios(seminarios);
-
-		professorSemi.relatorio();
+		professorSemiInit.setseminarios(seminarios);
 		
-		System.out.println("--- *** ----");
+		System.out.println("-------");
 
 		
 		System.out.println("Deseja adicionar outro seminário? Responda com S ou N");
@@ -54,6 +54,9 @@ public class CadastroSeminario {
 		}
 		
 		}while(cont);
+		
+		professorSemiInit.relatorio();
+
 	}
 
 }

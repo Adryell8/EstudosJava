@@ -3,7 +3,11 @@ package pooAtividades.Domain;
 public class Pessoa {
 	protected String nome;
 	protected String cpf;
-	protected Endereco endereco;
+	protected Endereco endereco; // protected faz com que a classe seja como public, mas seja acessada apenas por suas subclasses ou classes no mesmo pacote
+	
+	public Pessoa(String nome) {
+		this.nome = nome;
+	}// todas as classes herdam de Object
 	
 	public void imprime() {
 		System.out.println("Nome:"+this.nome);

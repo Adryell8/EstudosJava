@@ -8,6 +8,11 @@ public class Funcionario extends Pessoa {
 		System.out.println("Salário: "+this.salario);
 	}// "Sobrecarga" do método imprime()
 	
+	
+	public void relatorioPagamento() {
+		System.out.println("Eu: "+this.nome+", recebi o salário de: "+this.salario);
+	}
+	
 	public double getSalario() {
 		return salario;
 	}

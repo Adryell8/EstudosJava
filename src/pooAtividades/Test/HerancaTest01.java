@@ -15,7 +15,7 @@ public class HerancaTest01 {
 		pessoa.setCpf("1111111");
 		pessoa.setEndereco(endereco);
 		pessoa.setNome("Lucas Pessoa");
-		pessoa.imprimePessoa();
+		pessoa.imprime();
 		
 		Funcionario funcionario = new Funcionario();
 		funcionario.setCpf("2222222");
@@ -23,7 +23,7 @@ public class HerancaTest01 {
 		funcionario.setEndereco(endereco);
 		funcionario.setSalario(2000000);
 		System.out.println("----------");
-		funcionario.imprimePessoa();
+		funcionario.imprime();
 	}
 
 }

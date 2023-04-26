@@ -3,6 +3,11 @@ package pooAtividades.Domain;
 public class Funcionario extends Pessoa {
 	private double salario;
 	
+	public void imprime() {
+		super.imprime();
+		System.out.println("Salário: "+this.salario);
+	}// "Sobrecarga" do método imprime()
+	
 	public double getSalario() {
 		return salario;
 	}

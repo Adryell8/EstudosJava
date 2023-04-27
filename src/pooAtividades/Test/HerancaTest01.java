@@ -14,7 +14,7 @@ public class HerancaTest01 {
 		Pessoa pessoa = new Pessoa("Lucas Pessoa");
 		pessoa.setCpf("1111111");
 		pessoa.setEndereco(endereco);
-		pessoa.imprime();
+		System.out.println(pessoa);//sobrecrista do método toString
 		
 		Funcionario funcionario = new Funcionario("Lucas Funcionario");
 		funcionario.setCpf("2222222");

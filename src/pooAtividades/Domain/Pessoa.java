@@ -9,6 +9,15 @@ public class Pessoa {
 		this.nome = nome;
 	}// todas as classes herdam de Object
 	
+	@Override
+	public String toString() {
+		return "Nome:"+this.nome+
+				"\nCPF:"+this.cpf+
+				"\nEndereço: "+this.endereco.getRua()+
+				" CEP: "+this.endereco.getCep()+
+				" Número: "+this.endereco.getNumero();
+	}
+	
 	public void imprime() {
 		System.out.println("Nome:"+this.nome);
 		System.out.println("CPF:"+this.cpf);

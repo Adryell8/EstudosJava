@@ -12,7 +12,7 @@
 
 <h1 align="center">Estudos em Java</h1>
 
-<p align="center">Este repositório contém alguns projetos desenvolvidos como parte dos meus estudos em java.
+<p align="center">Este repositório foi criado com o intuito de salvar todas as minhas atividades e estudos da faculdade e pessoais sobre Java.
 </p>
 
 ## Principais projetos

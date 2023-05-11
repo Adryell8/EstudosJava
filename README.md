@@ -21,6 +21,7 @@
 - `Lançador de dados`: Esse projeto é um lançador de dados em que podem ser lançados dados desde um D6 até um D20 e o usuário pode escolher quantos dados deseja lançar.
 - `Atividade 05 (Jogo de adivinhação de animais)`: É um projeto simples, usando apenas IF e ELSE, em que o usuário irá pensar em uma lista de animais e o programa tentará adivinhar baseado nas características dos animais.
 - `Cadastro Simples Seminário`: É projeto simples com alguns conceitos de POO e é dividido em _Domain_ ( Link para o Domain: https://bit.ly/3LchVBk ) e _Test_ ( Link para o Test: https://bit.ly/3MT3cg0 ). O projeto consiste em ser um cadastro não muito complexo para um seminário, incluindo Alunos, Local, Professores, Seminário como informações à serem cadastradas. É utilizado conceitos de assoaciação, como: 1:N e/ou N:N, por exemplo.
+- `Cadastro de disciplina e aluno`: Esse projeto consiste em um cadastro simples de disciplina e aluno (sendo essas classes não executáveis, _link:_ https://bit.ly/3MgOr5V) e como classe executável temos a faculdade test ( _link:_ https://bit.ly/3puAnwO).
 
 ## Como executar os projetos
 

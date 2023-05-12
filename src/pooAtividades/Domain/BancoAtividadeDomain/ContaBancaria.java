@@ -43,7 +43,7 @@ public class ContaBancaria {
 	}
 	@Override
 	public String toString() {
-		return "Dados da conta: \nnumeroConta:" + numeroConta + "\ntitular:" + titular + "\nsaldo:" +String.format("%.2f", saldo);
+		return "Dados da conta: \nnumeroConta: " + numeroConta + "\ntitular: " + titular + "\nsaldo: " +String.format("%.2f", saldo);
 	}
 	
 	

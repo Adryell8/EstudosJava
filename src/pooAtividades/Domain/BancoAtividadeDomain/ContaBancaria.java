@@ -1,49 +1,67 @@
 package pooAtividades.Domain.BancoAtividadeDomain;
 
+import pooAtividades.Domain.BancoAtividadeDomain.Usuario;
+
 public class ContaBancaria {
 	private int numeroConta;
-	private String titular;
+	private Usuario titular;
 	private double saldo;
+
 	public ContaBancaria() {
-		
+
 	}
+
 	public ContaBancaria(int numeroConta) {
 		this.numeroConta = numeroConta;
+		this.titular = new Usuario();
 	}
-	public ContaBancaria(int numeroConta, String titular) {
+
+	public ContaBancaria(int numeroConta, Usuario titular) {
 		this.numeroConta = numeroConta;
 		this.titular = titular;
 	}
-	public ContaBancaria(int numeroConta, String titular, double saldo) {
+
+	public ContaBancaria(int numeroConta, Usuario titular, double saldo) {
 		this.numeroConta = numeroConta;
 		this.titular = titular;
 		this.saldo = saldo;
 	}
+
 	public int getNumeroConta() {
 		return numeroConta;
 	}
-	public String getTitular() {
+
+	public Usuario getTitular() {
 		return titular;
 	}
-	public void setTitular(String titular) {
+
+	public void setTitular(Usuario titular) {
 		this.titular = titular;
 	}
+
 	public double getSaldo() {
 		return saldo;
 	}
+
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
-	
-	public void deposito(double valorDep) {
-		this.saldo += valorDep;
+
+	public void deposito(double valorDep, int numeroConta) {
+	    if (this.numeroConta == numeroConta) {
+	        saldo += valorDep;
+	    }
 	}
-	public void saque(double valorSaq) {
-		this.saldo -= valorSaq +5.00;
+
+	public void saque(double valorSaq, int numeroConta) {
+		if(this.numeroConta == numeroConta) {
+		this.saldo -= valorSaq + 5.00;
+		}
 	}
+
 	@Override
 	public String toString() {
-		return "Dados da conta: \nnumeroConta: " + numeroConta + "\ntitular: " + titular + "\nsaldo: " +String.format("%.2f", saldo);
+		return "ContaBancaria numeroConta=" + this.numeroConta + ", saldo=" + this.saldo;
 	}
 	
 	

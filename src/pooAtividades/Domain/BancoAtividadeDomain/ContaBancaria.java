@@ -43,10 +43,6 @@ public class ContaBancaria {
 		return saldo;
 	}
 
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
-
 	public void deposito(double valorDep, int numeroConta) {
 	    if (this.numeroConta == numeroConta) {
 	        saldo += valorDep;

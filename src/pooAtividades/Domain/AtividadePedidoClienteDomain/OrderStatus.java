@@ -12,9 +12,9 @@ public enum OrderStatus {
 		STATUS = sTATUS;
 	}
 	
-	public static OrderStatus tipoClientePorNomeRelatorio(String status) {
+	public static OrderStatus getOrderStatusFromString(String statusString) {
 		for(OrderStatus tipo : values()) {
-			if(tipo.getSTATUS().equals(status)) {
+			if(tipo.getSTATUS().equals(statusString)) {
 				return tipo;
 			}
 		}

@@ -8,8 +8,8 @@ public enum OrderStatus {
 	
 	private String STATUS;
 
-	private OrderStatus(String sTATUS) {
-		STATUS = sTATUS;
+	private OrderStatus(String STATUS) {
+		this.STATUS = STATUS;
 	}
 	
 	public static OrderStatus getOrderStatusFromString(String statusString) {

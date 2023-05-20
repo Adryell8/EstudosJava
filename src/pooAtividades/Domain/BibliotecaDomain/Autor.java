@@ -15,14 +15,13 @@ public class Autor {
 	public Autor(String nomeAutor) {
 		this.nomeAutor = nomeAutor;
 	}
-	public Autor(String nomeAutor, int anoNascimento) {
+	public Autor(String nomeAutor, List<Livro>livros) {
 		this.nomeAutor = nomeAutor;
-		this.anoNascimento = anoNascimento;
-	}
-	public Autor(String nomeAutor, int anoNascimento, List<Livro>livros) {
-		this.nomeAutor = nomeAutor;
-		this.anoNascimento = anoNascimento;
 		this.livros = livros;
+	}
+	public Autor(String nomeAutor, List<Livro>livros,int anoNascimento) {
+		this.nomeAutor = nomeAutor;
+		this.anoNascimento = anoNascimento;
 	}
 	
 	public String getNomeAutor() {

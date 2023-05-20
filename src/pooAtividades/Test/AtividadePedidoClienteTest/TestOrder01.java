@@ -37,8 +37,8 @@ public class TestOrder01 {
 
 		System.out.println("Enter order data:");
 		Date moment = sdf.parse(input.next());
-		System.out.println("Status:");
-		OrderStatus status = OrderStatus.valueOf(input.next());
+		System.out.println("Status: Peding payment; Processing; Shipped; Delivered");
+		OrderStatus status = OrderStatus.getOrderStatusFromString(input.next());
 
 		order = new Order(moment, status, client);
 		

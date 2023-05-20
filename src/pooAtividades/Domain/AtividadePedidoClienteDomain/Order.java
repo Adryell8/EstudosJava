@@ -11,6 +11,7 @@ public class Order {
 
 	private Date moment;
 	private OrderStatus status;
+	
 	private List<OrderItem> listItens = new ArrayList<OrderItem>();
 
 	private Client client;
@@ -18,16 +19,14 @@ public class Order {
 	public Order() {
 	}
 
-	public Order(Date moment, OrderStatus status, List<OrderItem> listItens) {
+	public Order(Date moment, OrderStatus status) {
 		this.moment = moment;
 		this.status = status;
-		this.listItens = listItens;
 	}
 
-	public Order(Date moment, OrderStatus status, ArrayList<OrderItem> listItens, Client client) {
+	public Order(Date moment, OrderStatus status, Client client) {
 		this.moment = moment;
 		this.status = status;
-		this.listItens = listItens;
 		this.client = client;
 	}
 
@@ -81,7 +80,24 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [moment=" + moment + ", status=" + status + ", listItens=" + listItens + ", client=" + client
-				+ "]";
+		 StringBuilder sb = new StringBuilder();
+		 sb.append("Order moment ");
+		 sb.append(sdf.format(moment) + "\n");
+
+		 sb.append("Order status: ");
+		 sb.append(status + "\n");
+
+		 sb.append("\nClient");
+		 sb.append(client + "\n");
+
+		 sb.append("\nOrder items");
+		 for(OrderItem item : listItens) {
+			 sb.append(item + "\n");
+		 }
+		 sb.append("\nTotal price: ");
+		 sb.append(String.format("%.2f", total()));
+
+		 
+		 return sb.toString();
 	}
 }

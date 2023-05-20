@@ -43,4 +43,10 @@ public class Client {
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
+
+	@Override
+	public String toString() {
+		return "\nName " + name + "\nEmail " + email + "\nbirthDate " + sdf.format(birthDate);
+	}
+	
 }

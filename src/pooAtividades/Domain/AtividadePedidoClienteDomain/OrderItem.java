@@ -10,7 +10,6 @@ public class OrderItem {
 		
 	}
 	public OrderItem(Integer quantity, double price) {
-		super();
 		this.quantity = quantity;
 		this.price = price;
 	}
@@ -44,4 +43,9 @@ public class OrderItem {
 	public double subTotal() {
 		return (quantity * price);
 	}
+	@Override
+	public String toString() {
+		return "\nQuantity " + quantity + "\nPrice " + price + "\nproduct " + product;
+	}
+	
 }

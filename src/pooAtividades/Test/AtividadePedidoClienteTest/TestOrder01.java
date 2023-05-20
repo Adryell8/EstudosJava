@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Scanner;
 
 import javax.naming.NameClassPair;
@@ -11,13 +12,14 @@ import javax.naming.NameClassPair;
 import pooAtividades.Domain.AtividadePedidoClienteDomain.Client;
 import pooAtividades.Domain.AtividadePedidoClienteDomain.Order;
 import pooAtividades.Domain.AtividadePedidoClienteDomain.OrderItem;
+import pooAtividades.Domain.AtividadePedidoClienteDomain.OrderStatus;
 import pooAtividades.Domain.AtividadePedidoClienteDomain.Product;
 
 public class TestOrder01 {
 
 	public static void main(String[] args) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
+		Locale.setDefault(Locale.US);
 		
 		Scanner input = new Scanner(System.in);
 		Product product;
@@ -36,8 +38,10 @@ public class TestOrder01 {
 		System.out.println("Enter order data:");
 		Date moment = sdf.parse(input.next());
 		System.out.println("Status:");
-		String status = input.nextLine();
-		input.next();
+		OrderStatus status = OrderStatus.valueOf(input.next());
+
+		order = new Order(moment, status, client);
+		
 		System.out.println("How many items to this order?");
 		double quantityItem = input.nextDouble();		 
 		
@@ -60,9 +64,7 @@ public class TestOrder01 {
 			order.addItem(orderitem);
 		}
 		
-		
-		 System.out.println(order);
-	       
+		 System.out.println(order);   
 		
 	}
 }

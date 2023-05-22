@@ -1,8 +1,12 @@
 package pooAtividades.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import pooAtividades.Domain.JogoDaForcaDomain.JogoDaForca;
+import pooAtividades.Domain.JogoDaForcaDomain.Palavra;
 
 public class Forca {
 
@@ -10,8 +14,33 @@ public class Forca {
 		Scanner input = new Scanner(System.in);
 		JogoDaForca forca = new JogoDaForca();
 		
-		String palavra = forca.selecionaPalavra();
-		char[] palavraParcial = new char[palavra.length()];
+		List<Palavra> palavras = new ArrayList<>();
+		
+		System.out.println("Informa qual tipo de forca você deseja:\n1: Frutas\n2: Carro\n3: Qualquer tipo");
+		int opc = input.nextInt();
+		input.nextLine();
+		
+		switch (opc) {
+		case 1:
+			palavras = JogoDaForca.carregaPalavraFrutas();
+			break;
+		case 2:
+			palavras = JogoDaForca.carregaPalavraCarro();
+			break;
+		case 3:
+			palavras = JogoDaForca.carregaPalavra();
+			break;
+		default:
+			System.out.println("Opção inválida.");
+			break;
+		}
+		
+		forca.setPalavras(palavras);
+		
+		
+		Palavra palavra = forca.getPalavras().get(new Random().nextInt(forca.getPalavras().size()));
+		String palavraSelecionada = palavra.getPalavra();
+		char[] palavraParcial = new char[palavraSelecionada.length()];
 		
 		int tentativa = 0;
 		
@@ -22,11 +51,12 @@ public class Forca {
 		while(tentativa < forca.getMaxTentativas()) {
 			System.out.println("\nA palavra: "+String.valueOf(palavraParcial));
 			System.out.println("Digite uma letra:");
-			char letra = input.nextLine().toUpperCase().charAt(0);
+			String entradaLetra = input.nextLine().toUpperCase();
+            char letra = entradaLetra.charAt(0);
 			
 			if(forca.verificaPalavra(palavra, palavraParcial, letra)) {
-				if(String.valueOf(palavraParcial).equals(palavra)) {
-					System.out.println("Você acertou! A palavra era: "+palavra+"!");
+				if(String.valueOf(palavraParcial).equals(palavraSelecionada)) {
+					System.out.println("Você acertou! A palavra era: "+palavra.getPalavra()+"!");
 					break;
 				}
 			}else {
@@ -35,7 +65,7 @@ public class Forca {
 			}
 			
 			if(tentativa == forca.getMaxTentativas()) {
-				System.out.println("Você atingou o número máximo de tetnaivas, tente novamente.\nA palavra correta era: "+palavra);
+				System.out.println("Você atingou o número máximo de tentativas, tente novamente.\nA palavra correta era: "+palavra.getPalavra());
 			}
 		}
 		

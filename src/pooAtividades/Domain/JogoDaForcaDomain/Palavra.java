@@ -2,9 +2,6 @@ package pooAtividades.Domain.JogoDaForcaDomain;
 
 public class Palavra {
 	private String palavra;
-	
-	public Palavra() {
-	}
 
 	public Palavra(String palavra) {
 		super();

@@ -1,19 +1,12 @@
 package pooAtividades.Domain.EnumDomain;
 
-public class Funcionario {
+public abstract class Funcionario {
 	protected String nome;
-	protected Double salario;
+	protected double salario;
 	
-	public Funcionario(String nome, Double salario) {
-		super();
+	public Funcionario(String nome, double salario) {
 		this.nome = nome;
 		this.salario = salario;
 	}
-
-	@Override
-	public String toString() {
-		return "Funcionario [nome=" + nome + ", salario=" + salario + "]";
-	}
-	
 	
 }

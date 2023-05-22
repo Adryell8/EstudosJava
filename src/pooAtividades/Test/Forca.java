@@ -2,9 +2,9 @@ package pooAtividades.Test;
 
 import java.util.Scanner;
 
-import pooAtividades.Domain.JogoDaForca;
+import pooAtividades.Domain.JogoDaForcaDomain.JogoDaForca;
 
-public class Foca {
+public class Forca {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);

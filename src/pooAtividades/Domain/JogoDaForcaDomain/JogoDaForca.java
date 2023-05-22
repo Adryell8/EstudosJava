@@ -1,15 +1,17 @@
-package pooAtividades.Domain;
+package pooAtividades.Domain.JogoDaForcaDomain;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class JogoDaForca {
-	private final String[] PALAVRAS = { "ABACAXI", "BANANA", "MELANCIA", "LARANJA", "MORANGO" };
+	private List<Palavra> palavras = new ArrayList<>();
 	private final int MAX_TENTATIVAS = 10;
 
-	public String selecionaPalavra() {
+	public Palavra selecionaPalavra() {
 		Random ran = new Random();
-		int indicePalavra = ran.nextInt(PALAVRAS.length);
-		return PALAVRAS[indicePalavra];
+		int indicePalavra = ran.nextInt(palavras.size());
+		return palavras.get(indicePalavra);
 	}
 
 	public boolean verificaPalavra(String palavra, char[] palavraParcial, char letra) {
@@ -25,8 +27,11 @@ public class JogoDaForca {
 
 	}
 
-	public String[] getPalavras() {
-		return PALAVRAS;
+	public List<Palavra> getPalavras() {
+		return palavras;
+	}
+	public void setPalavras(List<Palavra> palavras) {
+		this.palavras = palavras;
 	}
 
 	public int getMaxTentativas() {

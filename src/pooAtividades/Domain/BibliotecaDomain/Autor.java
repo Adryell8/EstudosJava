@@ -11,7 +11,6 @@ public class Autor {
 	public Autor() {
 		
 	}
-	
 	public Autor(String nomeAutor) {
 		this.nomeAutor = nomeAutor;
 	}

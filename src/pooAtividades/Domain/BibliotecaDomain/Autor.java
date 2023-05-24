@@ -6,46 +6,72 @@ import java.util.List;
 public class Autor {
 	private String nomeAutor;
 	private int anoNascimento;
-	List<Livro> livros = new ArrayList<>();
-	
+	private List<Livro> listLivros = new ArrayList<Livro>();
+
 	public Autor() {
-		
 	}
+
 	public Autor(String nomeAutor) {
 		this.nomeAutor = nomeAutor;
 	}
-	public Autor(String nomeAutor, List<Livro>livros) {
+
+	public Autor(String nomeAutor, List<Livro> livros) {
 		this.nomeAutor = nomeAutor;
-		this.livros = livros;
+		this.listLivros = livros;
 	}
-	public Autor(String nomeAutor, List<Livro>livros,int anoNascimento) {
+
+	public Autor(String nomeAutor, List<Livro> livros, int anoNascimento) {
 		this.nomeAutor = nomeAutor;
 		this.anoNascimento = anoNascimento;
 	}
-	
+
 	public String getNomeAutor() {
 		return nomeAutor;
 	}
+
 	public void setNomeAutor(String nomeAutor) {
 		this.nomeAutor = nomeAutor;
 	}
+
 	public int getAnoNascimento() {
 		return anoNascimento;
 	}
+
 	public void setAnoNascimento(int anoNascimento) {
 		this.anoNascimento = anoNascimento;
 	}
+
 	public List<Livro> getLivros() {
-		return livros;
-	}
-	public void setLivros(List<Livro> livros) {
-		this.livros = livros;
+		return listLivros;
 	}
 
-	@Override
-	public String toString() {
-		return "Autor [nomeAutor=" + nomeAutor + ", anoNascimento=" + anoNascimento + ", livros=" + livros + "]";
+	public void setLivros(List<Livro> livros) {
+		this.listLivros = livros;
 	}
 	
-	
+	public void adicionaLivro(Livro livros) {
+		listLivros.add(livros);
+	}
+	public void removeLivro(Livro livros) {
+		listLivros.remove(livros);
+	}
+	public void removeLivro(int indice) {
+		if(indice >= 0 && indice < listLivros.size()) {
+			listLivros.remove(indice);
+		}else {
+			System.out.println("Livro não encontrado");
+		}
+	}
+	public void updateLivro(int indice, Livro livroNovo ) {
+		if(indice >= 0 && indice < listLivros.size()) {
+		listLivros.set(indice, livroNovo);
+		}else {
+			System.out.println("Índice inválido.");
+		}
+	}
+	@Override
+	public String toString() {
+		return "Autor [nomeAutor=" + nomeAutor + ", anoNascimento=" + anoNascimento + ", livros=" + listLivros + "]";
+	}
+
 }

@@ -1,11 +1,15 @@
 package pooAtividades.Domain.BibliotecaDomain;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Autor {
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	
 	private String nomeAutor;
-	private int anoNascimento;
+	private Date dataNascimento;
 	private List<Livro> listLivros = new ArrayList<Livro>();
 
 	public Autor() {
@@ -15,14 +19,15 @@ public class Autor {
 		this.nomeAutor = nomeAutor;
 	}
 
-	public Autor(String nomeAutor, List<Livro> livros) {
+	public Autor(String nomeAutor, Date dataNascimento) {
 		this.nomeAutor = nomeAutor;
-		this.listLivros = livros;
+		this.dataNascimento = dataNascimento;
 	}
 
-	public Autor(String nomeAutor, List<Livro> livros, int anoNascimento) {
+	public Autor(String nomeAutor, Date dataNascimento, List<Livro> livros) {
 		this.nomeAutor = nomeAutor;
-		this.anoNascimento = anoNascimento;
+		this.dataNascimento = dataNascimento;
+		this.listLivros = livros;
 	}
 
 	public String getNomeAutor() {
@@ -33,12 +38,12 @@ public class Autor {
 		this.nomeAutor = nomeAutor;
 	}
 
-	public int getAnoNascimento() {
-		return anoNascimento;
+	public Date getAnoNascimento() {
+		return dataNascimento;
 	}
 
-	public void setAnoNascimento(int anoNascimento) {
-		this.anoNascimento = anoNascimento;
+	public void setAnoNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 	public List<Livro> getLivros() {
@@ -80,7 +85,7 @@ public class Autor {
 	}
 	@Override
 	public String toString() {
-		return "Autor [nomeAutor=" + nomeAutor + ", anoNascimento=" + anoNascimento + ", livros=" + listLivros + "]";
+		return "Autor [nomeAutor=" + nomeAutor + ", data Nascimento=" + sdf.format(dataNascimento) + ", livros=" + listLivros + "]";
 	}
 
 }

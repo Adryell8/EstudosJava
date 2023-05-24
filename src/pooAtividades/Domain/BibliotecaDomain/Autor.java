@@ -69,6 +69,9 @@ public class Autor {
 			System.out.println("Índice inválido.");
 		}
 	}
+	public int quantLivros() {
+		return listLivros.size();
+	}
 	@Override
 	public String toString() {
 		return "Autor [nomeAutor=" + nomeAutor + ", anoNascimento=" + anoNascimento + ", livros=" + listLivros + "]";

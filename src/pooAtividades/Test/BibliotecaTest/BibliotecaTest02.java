@@ -33,7 +33,10 @@ public class BibliotecaTest02 {
 			System.out.println("Informe o nome do livro: "+ (i+1)+"°");
 			String nomeLivro = input.nextLine();
 			
-			livro = new Livro(nomeLivro);
+			System.out.println("Informe a data de lançamento do livro");
+			Date dataLancamento = sdf.parse(input.nextLine());
+			
+			livro = new Livro(nomeLivro, dataLancamento);
 			autor.adicionaLivro(livro);
 		}
 		System.out.println(autor);

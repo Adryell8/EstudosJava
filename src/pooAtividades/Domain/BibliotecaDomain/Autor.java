@@ -72,6 +72,12 @@ public class Autor {
 	public int quantLivros() {
 		return listLivros.size();
 	}
+	public String obterLivro(Livro livro) {
+		if(listLivros.contains(livro)) {
+			return livro.toString();
+		}
+		return "Livro não encontrado";
+	}
 	@Override
 	public String toString() {
 		return "Autor [nomeAutor=" + nomeAutor + ", anoNascimento=" + anoNascimento + ", livros=" + listLivros + "]";

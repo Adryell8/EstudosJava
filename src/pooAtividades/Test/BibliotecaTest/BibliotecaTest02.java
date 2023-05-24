@@ -3,6 +3,7 @@ package pooAtividades.Test.BibliotecaTest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 import pooAtividades.Domain.BibliotecaDomain.Autor;
@@ -40,6 +41,31 @@ public class BibliotecaTest02 {
 			autor.adicionaLivro(livro);
 		}
 		System.out.println(autor);
+		
+		System.out.println("Deseja mudar o nome de algum livro?");
+		String respotaNomeNovoLivro = input.nextLine();
+		
+		if(respotaNomeNovoLivro.equalsIgnoreCase("s")) {
+			System.out.println("Informe o nome do livro que deseja alterar: ");
+			String nomeLivroAtual = input.nextLine();
+			
+			if(!livro.getNomeLivro().equalsIgnoreCase(nomeLivroAtual)) {
+				System.out.println("Livro não encontrado");
+				return;
+			}
+			
+			System.out.println("Informe o novo nome: ");
+			String nomeNovo = input.nextLine();
+			
+			List<Livro> livrosAutor = autor.getLivros();
+			for(Livro livros : livrosAutor) {
+				if(livros.getNomeLivro().equalsIgnoreCase(nomeLivroAtual))
+				livro.setNomeLivro(nomeLivroAtual, nomeNovo);
+				break;
+			}
+		}	
+		System.out.println(livro);
+		
 		
 	}
 

@@ -11,9 +11,9 @@ public class JogoDaForca {
 	public static List<Palavra> carregaPalavraFrutas(){
 		List<Palavra> palavras = new ArrayList<>();
 		
-		palavras.add(new TipoFruta("Banana"));
-		palavras.add(new TipoFruta("Kiwi"));
-		palavras.add(new TipoFruta("Laranja"));
+		palavras.add(new TipoFruta("banana"));
+		palavras.add(new TipoFruta("kiwi"));
+		palavras.add(new TipoFruta("laranja"));
 		
 		return palavras;
 	}
@@ -21,9 +21,9 @@ public class JogoDaForca {
 	public static List<Palavra> carregaPalavraCarro(){
 		List<Palavra> palavras = new ArrayList<>();
 		
-		palavras.add(new TipoCarro("Ferrari"));
-		palavras.add(new TipoCarro("BMW"));
-		palavras.add(new TipoCarro("Ford"));
+		palavras.add(new TipoCarro("ferrari"));
+		palavras.add(new TipoCarro("bmw"));
+		palavras.add(new TipoCarro("ford"));
 		
 		return palavras;
 	}
@@ -31,17 +31,13 @@ public class JogoDaForca {
 	public static List<Palavra> carregaPalavra(){
 		List<Palavra> palavras = new ArrayList<>();
 		
-		palavras.add(new TipoCarro("Ferrari"));
-		palavras.add(new TipoCarro("BMW"));
-		palavras.add(new TipoCarro("Ford"));
+		carregaPalavraCarro();
 		
-		palavras.add(new TipoFruta("Banana"));
-		palavras.add(new TipoFruta("Kiwi"));
-		palavras.add(new TipoFruta("Laranja"));
+		carregaPalavraFrutas();
 		
-		palavras.add(new Palavra("Casa"));
-        palavras.add(new Palavra("Computador"));
-        palavras.add(new Palavra("Telefone"));
+		palavras.add(new Palavra("casa"));
+        palavras.add(new Palavra("computador"));
+        palavras.add(new Palavra("telefone"));
 		
 		return palavras;
 	}

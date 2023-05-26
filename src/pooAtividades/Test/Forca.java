@@ -51,8 +51,8 @@ public class Forca {
 		while(tentativa < forca.getMaxTentativas()) {
 			System.out.println("\nA palavra: "+String.valueOf(palavraParcial));
 			System.out.println("Digite uma letra:");
-			String entradaLetra = input.nextLine().toUpperCase();
-            char letra = entradaLetra.charAt(0);
+			String entradaLetra = input.nextLine().toLowerCase();
+            char letra = entradaLetra.toLowerCase().charAt(0);
 			
 			if(forca.verificaPalavra(palavra, palavraParcial, letra)) {
 				if(String.valueOf(palavraParcial).equals(palavraSelecionada)) {

@@ -5,8 +5,7 @@ public class Individual extends TaxPayer {
 
 	@Override
 	public double tax() {
-		
-		return 0;
+		return anualIncome;
 	}
 
 	public Individual() {
@@ -28,7 +27,7 @@ public class Individual extends TaxPayer {
 
 	@Override
 	public String toString() {
-		return "Individual [healthExpenditures=" + healthExpenditures + "]";
+		return "Individual [healthExpenditures=" + healthExpenditures + " anualIncome= " + anualIncome;
 	}
 	
 

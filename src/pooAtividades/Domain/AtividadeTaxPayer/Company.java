@@ -5,7 +5,13 @@ public class Company extends TaxPayer{
 
 	@Override
 	public double tax() {
-		return 0;
+		double basicTax = 0.16;
+		if(this.numberOfEmplyees > 10) {
+			basicTax = 0.14;
+			return getAnualIncome() * basicTax;
+		}else {
+			return getAnualIncome() * basicTax;
+		}
 	}
 
 	public Company() {

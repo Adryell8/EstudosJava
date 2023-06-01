@@ -5,7 +5,22 @@ public class Individual extends TaxPayer {
 
 	@Override
 	public double tax() {
-		return anualIncome;
+		
+		double basicTax = 0.0;
+		if(getAnualIncome() < 20000) {
+			basicTax = getAnualIncome() * 0.15;
+		}else {
+			basicTax = getAnualIncome() * 0.25;
+		}
+		
+		basicTax = basicTax - (getAnualIncome() * 0.5);
+		
+		if(basicTax < 0.0) {
+			basicTax = 0.0;
+		}
+		
+		return basicTax;
+		
 	}
 
 	public Individual() {
